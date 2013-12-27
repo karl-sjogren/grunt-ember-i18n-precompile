@@ -34,10 +34,7 @@ module.exports = function(grunt) {
             
             var includePath = f.src.toString().substring(0, f.src.toString().lastIndexOf(".")) + '/';
             var result = src.toString().replace(/:\s*["'](.*)["'](,?)/gi, function(match, p1, p2) {
-		grunt.log.writeln("stuff");
 		var unescaped = unescape(p1);
-		grunt.log.writeln("stuff");
-		grunt.log.writeln("Unescaped: " + unescaped);
 		var res = hbs.precompile(unescaped);
 		return ": " + res.toString() + (p2 || ""); // We need to add back the colon and possibly the comma at the end
             });
