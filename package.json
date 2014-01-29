@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "homepage": "https://github.com/karl-sjogren/grunt-ember-i18n-precompile",
     "author": {
-        "name": "Karl-Johan Sjören",
+        "name": "Karl-Johan Sjï¿½ren",
         "email": "karl-johan.sjogren@openlibrarysolutions.com"
     },
     "repository": {
@@ -32,11 +32,11 @@
         "grunt-contrib-clean": "~0.4.0",
         "grunt-contrib-nodeunit": "~0.2.0",
         "grunt": "~0.4.1",
-	"handlebars": "~1.2.1"
+	"handlebars": "~1"
     },
     "peerDependencies": {
         "grunt": "~0.4.1",
-	"handlebars": "~1.2.1"
+	"handlebars": "~1"
     },
     "keywords": [
         "ember",
