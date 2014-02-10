@@ -14,9 +14,8 @@ module.exports = function(grunt) {
     // creation: http://gruntjs.com/creating-tasks
     
     grunt.registerMultiTask('ember_i18n_precompile', 'Implements a syntax for precompiling ember-i18n language files.', function() {
-	var handlebars = require('handlebars');
-	var hbs = handlebars.create();
-	var unescape = function(v) { eval('v = "'+v+'"'); return v; };
+        var handlebars = require('handlebars');
+        var unescape = function(v) { eval('v = "'+v+'"'); return v; };
         // Iterate over all specified file groups.
         this.files.forEach(function(f) {
             // Concat specified files.
@@ -32,12 +31,16 @@ module.exports = function(grunt) {
                 return grunt.file.read(filepath); // Read file source.
             });
             
-            var includePath = f.src.toString().substring(0, f.src.toString().lastIndexOf(".")) + '/';
             var result = src.join(";\n").replace(/:\s*["'](.*)["'](,?)/gi, function(match, p1, p2) {
-		var unescaped = unescape(p1);
-		var res = hbs.precompile(unescaped);
-		return ": " + res.toString() + (p2 || ""); // We need to add back the colon and possibly the comma at the end
+                var unescaped = unescape(p1);
+                var res = handlebars.precompile(unescaped);
+                return ": t(" + res.toString() + ")" + (p2 || ""); // We need to add back the colon and possibly the comma at the end
             });
+
+            result = "(function() {\n" +
+                     "var t = Handlebars.template;\n" +
+                     result + 
+                     "})();"
             
             // Write the destination file.
             grunt.file.write(f.dest, result);
