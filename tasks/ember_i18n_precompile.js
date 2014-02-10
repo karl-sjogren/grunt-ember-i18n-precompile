@@ -33,7 +33,7 @@ module.exports = function(grunt) {
             });
             
             var includePath = f.src.toString().substring(0, f.src.toString().lastIndexOf(".")) + '/';
-            var result = src.toString().replace(/:\s*["'](.*)["'](,?)/gi, function(match, p1, p2) {
+            var result = src.join(";\n").replace(/:\s*["'](.*)["'](,?)/gi, function(match, p1, p2) {
 		var unescaped = unescape(p1);
 		var res = hbs.precompile(unescaped);
 		return ": " + res.toString() + (p2 || ""); // We need to add back the colon and possibly the comma at the end
