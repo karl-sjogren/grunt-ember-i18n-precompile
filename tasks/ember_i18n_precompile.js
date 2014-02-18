@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             result = "(function() {\n" +
                      "var t = Handlebars.template;\n" +
                      result + 
-                     "})();"
+                     "})();";
             
             // Write the destination file.
             grunt.file.write(f.dest, result);

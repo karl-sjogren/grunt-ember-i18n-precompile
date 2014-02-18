@@ -1,10 +1,10 @@
 {
     "name": "grunt-ember-i18n-precompile",
     "description": "This is a helper task for Ember.I18n that let you precompile your language files so it can be used on a site without the handlebars compiler loaded on the client. ",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "homepage": "https://github.com/karl-sjogren/grunt-ember-i18n-precompile",
     "author": {
-        "name": "Karl-Johan Sj�ren",
+        "name": "Karl-Johan Sjören",
         "email": "karl-johan.sjogren@openlibrarysolutions.com"
     },
     "repository": {
@@ -43,7 +43,7 @@
         "ember-i18n",
         "emberjs",
         "i18n",
-	"ember-i18n-precompile",
-	"precompile"
+        "ember-i18n-precompile",
+        "precompile"
     ]
 }
