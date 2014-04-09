@@ -25,8 +25,13 @@ In your project's Gruntfile, add a section named `ember_i18n_precompile` to the 
 ```js
 grunt.initConfig({
   ember_i18n_precompile: {
-    your_target: {
-      // Target-specific file lists and/or options go here.
+    english: {
+      src: ['app/locales/en/base.js', 'app/locales/en/dashboard.js'],
+      dest: 'dest/en.js'
+    },
+    german: {
+      src: ['app/locales/de/base.js', 'app/locales/de/dashboard.js'],
+      dest: 'dest/de.js'
     },
   },
 })
